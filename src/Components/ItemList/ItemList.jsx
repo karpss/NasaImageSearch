@@ -62,7 +62,7 @@ const ItemList = () => {
             From : <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} />
         To : <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} />
               
-            </div> : <div style={{display: 'flex', height: '40vh', alignItems: 'center'}}>Your search results will show here</div>}
+            </div> : <div>Your search results will show here</div>}
             {( !startDate   ? items : items.filter((i) => new Date (i?.data[0].date_created).toISOString().slice(0, 10) >= startDate &&  new Date(i?.data[0].date_created).toISOString().slice(0, 10) <= endDate)
             ).map((item) => (
                 <React.Fragment key={item.href}>
