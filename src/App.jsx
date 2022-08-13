@@ -1,13 +1,14 @@
 /* eslint-disable */
 import "./App.css";
+import ApplicationContextProvider from "./Context/ApplicationContextProvider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <ApplicationContextProvider>
+      <div className="App">
         
-      </header>
-    </div>
+      </div>
+  </ApplicationContextProvider>
   );
 }
 
