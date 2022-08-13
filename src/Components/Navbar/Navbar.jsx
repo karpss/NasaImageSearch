@@ -1,9 +1,7 @@
-/* eslint-disable */
-import './Navbar.css';
-const Navbar = () => {
-  return (
-    <h1>NASA IMAGE SEARCH</h1>
-  )
+import "./Navbar.css";
+
+function Navbar() {
+  return <h1>NASA IMAGE SEARCH</h1>;
 }
 
-export default Navbar
+export default Navbar;

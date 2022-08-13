@@ -1,9 +1,7 @@
-/* eslint-disable */
+import icon from "./icon.gif";
 
-const LoadingSpinner = () => {
-  return (
-    <div>LoadingSpinner...</div>
-  )
+function LoadingSpinner() {
+  return <img src={icon} alt="Loading" />;
 }
 
-export default LoadingSpinner
+export default LoadingSpinner;
