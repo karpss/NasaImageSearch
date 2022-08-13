@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { useContext, useEffect, useState } from "react";
 import { ActionTypes, ApplicationContext } from "../../Context/ApplicationContextProvider";
-
+import "./ItemDetails.css";
 
 
 const ItemDetails = () => {
@@ -38,11 +38,10 @@ const ItemDetails = () => {
     
 
     return (
-        <div
-            
-        >
+        <div className="cardDetails">
             <div>
                 <button
+                    className="backButton"
                     type="button"
                     onClick={() => {
                         dispatch({ type: ActionTypes.SELECT_ITEM, payload: null });
@@ -57,14 +56,13 @@ const ItemDetails = () => {
                     <img
                         
                         src={itemMedia?.images[0]?.href}
-                        alt="nasa media"
+                        alt="nasa image"
                     />
                 )}
             </div>
             <div>
                 <h2> Title: {selectedItem?.data[0].title}</h2>
                 <b> Date: {new Date(selectedItem?.data[0].date_created).toString()} </b>
-                <b> Date: {new Date(selectedItem?.data[0].date_created).toISOString().slice(0, 10)} </b>
                 <p>Center: {selectedItem?.data[0].center}</p>
                 <p> Description: {selectedItem?.data[0].description}</p>
                 <p>Location: {selectedItem?.data[0].location}</p>

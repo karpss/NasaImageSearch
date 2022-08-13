@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useContext, useState} from 'react';
+import React, { useContext, useState,Fragment} from 'react';
 import {
   ActionTypes,
   ApplicationContext,
@@ -7,6 +7,7 @@ import {
 import Item from "../Item/Item";
 import Search from "../Search/Search";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import "./ItemList.css";
 
 
 
@@ -59,13 +60,13 @@ const ItemList = () => {
         >
             {items.length > 0 ? <div >
                 
-            From : <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} />
-        To : <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} />
+            Year Start : <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} />
+         Year End : <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} />
               
-            </div> : <div>Your search results will show here</div>}
+            </div> : <div className="searchMessage">Your search results will be shown here</div>}
             {( !startDate   ? items : items.filter((i) => new Date (i?.data[0].date_created).toISOString().slice(0, 10) >= startDate &&  new Date(i?.data[0].date_created).toISOString().slice(0, 10) <= endDate)
             ).map((item) => (
-                <React.Fragment key={item.href}>
+                <Fragment key={item.href}>
                     <Item
                         onClick={() =>
                             dispatch({
@@ -75,7 +76,7 @@ const ItemList = () => {
                         }
                         item={item}
                     />
-                </React.Fragment>
+                </Fragment>
             ))}
         </div>}
         

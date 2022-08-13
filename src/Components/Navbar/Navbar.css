@@ -1,0 +1,10 @@
+h1{
+    margin-top: 0em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    color: #fff;
+    font-family: cursive;
+}

@@ -2,6 +2,7 @@
 import { useState, useContext } from "react";
 import apiCallHandler from "../../Api/ApiCall";
 import { ActionTypes, ApplicationContext } from "../../Context/ApplicationContextProvider";
+import "./Search.css"
 
 
 const Search = () => {
@@ -29,8 +30,8 @@ const Search = () => {
   
     return (
       <form onSubmit={handleFetch} >
-        <input value={query} label="Search images" onChange={onQueryChange}  />
-        <button type="submit">Search</button>
+        <input className="formInput" value={query} placeholder="Enter Search like... Mars, Apollo" label="Search images" onChange={onQueryChange}  />
+        <button className="formButton" disabled= {!query}type="submit">Search</button>
       </form>
     );
 

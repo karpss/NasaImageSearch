@@ -1,8 +1,8 @@
 /* eslint-disable */
-
+import './Navbar.css';
 const Navbar = () => {
   return (
-    <h2>NASA IMAGE SEARCH</h2>
+    <h1>NASA IMAGE SEARCH</h1>
   )
 }
 

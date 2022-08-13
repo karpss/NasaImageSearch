@@ -1,13 +1,15 @@
 /* eslint-disable */
 
-
+import "./Item.css";
 
 const Item = ({item, onClick}) => {
     
     return (
-        <div onClick={onClick} >
+        <div className="container">
+        <div className="card" onClick={onClick} >
             <h4>{item.data[0].title}</h4>
-            <img width={200} src={item.links[0].href} alt="thumb" />
+            <img  src={item.links[0].href} alt="thumbnail" />
+        </div>
         </div>
 
     )
