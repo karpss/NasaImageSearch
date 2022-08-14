@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  class="cardDetails"
+>
+  <div>
+    <button
+      class="backButton"
+      type="button"
+    >
+      Back to search
+    </button>
+  </div>
+  <div>
+    <img
+      alt="Nasa Gallery"
+    />
+  </div>
+  <div>
+    <h2>
+       Title: 
+    </h2>
+    <b>
+       Date: 
+      Invalid Date
+       
+    </b>
+    <p>
+      Center: 
+    </p>
+    <p>
+       Description: 
+    </p>
+    <p>
+      Location: 
+    </p>
+    <p>
+      Photographer: 
+    </p>
+    <p>
+      Keywords: 
+    </p>
+  </div>
+</div>
+`;

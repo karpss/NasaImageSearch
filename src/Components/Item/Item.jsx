@@ -3,7 +3,7 @@ import "./Item.css";
 
 function Item({ item, onClick }) {
   return (
-    <div className="container">
+    <div className="container" role="button">
       <div className="card" onClick={onClick} aria-hidden="true">
         <h4>{item.data[0].title}</h4>
         <img src={item.links[0].href} alt="thumbnail" />
