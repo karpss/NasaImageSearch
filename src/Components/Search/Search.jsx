@@ -24,6 +24,7 @@ function Search() {
       ActionTypes.FETCH_IMAGE_ITEMS,
       dispatch,
     );
+    setQuery("");
   };
 
   return (
