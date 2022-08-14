@@ -1,5 +1,4 @@
-/* eslint-disable */
-import React, { useContext, useState,Fragment} from 'react';
+import { useContext, useState, Fragment } from "react";
 import {
   ActionTypes,
   ApplicationContext,
@@ -9,79 +8,70 @@ import Search from "../Search/Search";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import "./ItemList.css";
 
+function ItemList() {
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
+  const {
+    state: { items, loading },
+    dispatch,
+  } = useContext(ApplicationContext);
 
-
-
-const ItemList = () => {
-    
-    //const [filter, setFilter] = useState("all");
-    const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-    
-    
-
-    const {
-        state: { items, loading },
-        dispatch
-    } = useContext(ApplicationContext);
-
-    
-      
-      
-      
-    
-
-    
-      
-      
-
-
-    
-
-    console.log("Na me", items)
-    console.log("SD",startDate)
-    console.log("ED",endDate)
-
-    
-        
-          
-          
-    
-        
-    
-      
-
-    return <div >
-        <Search />
-        {loading ? <LoadingSpinner/> : 
-        <div
-            
-        >
-            {items.length > 0 ? <div >
-                
-            Year Start : <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} />
-         Year End : <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} />
-              
-            </div> : <div className="searchMessage">Your search results will be shown here</div>}
-            {( !startDate   ? items : items.filter((i) => new Date (i?.data[0].date_created).toISOString().slice(0, 10) >= startDate &&  new Date(i?.data[0].date_created).toISOString().slice(0, 10) <= endDate)
-            ).map((item) => (
-                <Fragment key={item.href}>
-                    <Item
-                        onClick={() =>
-                            dispatch({
-                                type: ActionTypes.SELECT_ITEM,
-                                payload: item
-                            })
-                        }
-                        item={item}
-                    />
-                </Fragment>
-            ))}
-        </div>}
-        
-    </div>;
-    
+  return (
+    <div>
+      <Search />
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <div>
+          {items.length > 0 ? (
+            <div>
+              Year Start :{" "}
+              <input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+              />
+              Year End :{" "}
+              <input
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+              />
+            </div>
+          ) : (
+            <div className="searchMessage">
+              Your search results will be shown here
+            </div>
+          )}
+          {(!startDate
+            ? items
+            : items.filter(
+                (i) =>
+                  new Date(i?.data[0].date_created)
+                    .toISOString()
+                    .slice(0, 10) >= startDate &&
+                  new Date(i?.data[0].date_created)
+                    .toISOString()
+                    .slice(0, 10) <= endDate,
+              )
+          ).map((item) => (
+            <Fragment key={item.href}>
+              <Item
+                onClick={() =>
+                  dispatch({
+                    type: ActionTypes.SELECT_ITEM,
+                    payload: item,
+                  })
+                }
+                item={item}
+              />
+            </Fragment>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default ItemList;
