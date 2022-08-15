@@ -48,12 +48,10 @@ function ItemList() {
             ? items
             : items.filter(
                 (i) =>
-                  new Date(i?.data[0].date_created)
-                    .toISOString()
-                    .slice(0, 10) >= startDate &&
-                  new Date(i?.data[0].date_created)
-                    .toISOString()
-                    .slice(0, 10) <= endDate,
+                  new Date(i.data[0].date_created).toISOString().slice(0, 10) >=
+                    startDate &&
+                  new Date(i.data[0].date_created).toISOString().slice(0, 10) <=
+                    endDate,
               )
           ).map((item) => (
             <Fragment key={item.href}>

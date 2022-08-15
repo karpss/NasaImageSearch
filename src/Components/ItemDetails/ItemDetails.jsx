@@ -48,16 +48,16 @@ function ItemDetails() {
         </button>
       </div>
       <div>
-        <img src={itemMedia?.images[0]?.href} alt="Nasa Gallery" />
+        <img src={itemMedia.images[0]?.href} alt="Nasa Gallery" />
       </div>
       <div>
-        <h2> Title: {selectedItem?.data[0].title}</h2>
-        <b> Date: {new Date(selectedItem?.data[0].date_created).toString()} </b>
-        <p>Center: {selectedItem?.data[0].center}</p>
-        <p> Description: {selectedItem?.data[0].description}</p>
-        <p>Location: {selectedItem?.data[0].location}</p>
-        <p>Photographer: {selectedItem?.data[0].photographer}</p>
-        <p>Keywords: {selectedItem?.data[0].keywords.join(", ")}</p>
+        <h2> Title: {selectedItem.data[0].title}</h2>
+        <b> Date: {new Date(selectedItem.data[0].date_created).toString()} </b>
+        <p>Center: {selectedItem.data[0].center}</p>
+        <p> Description: {selectedItem.data[0].description}</p>
+        <p>Location: {selectedItem.data[0].location}</p>
+        <p>Photographer: {selectedItem.data[0].photographer}</p>
+        <p>Keywords: {selectedItem.data[0].keywords.join(", ")}</p>
       </div>
     </div>
   );
