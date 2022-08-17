@@ -44,28 +44,32 @@ function ItemList() {
               Your search results will be shown here
             </div>
           )}
-          {(!startDate
-            ? items
-            : items.filter(
-                (i) =>
-                  new Date(i.data[0].date_created).toISOString().slice(0, 10) >=
-                    startDate &&
-                  new Date(i.data[0].date_created).toISOString().slice(0, 10) <=
-                    endDate,
-              )
-          ).map((item) => (
-            <Fragment key={item.href}>
-              <Item
-                onClick={() =>
-                  dispatch({
-                    type: ActionTypes.SELECT_ITEM,
-                    payload: item,
-                  })
-                }
-                item={item}
-              />
-            </Fragment>
-          ))}
+          <div className="container">
+            {(!startDate
+              ? items
+              : items.filter(
+                  (i) =>
+                    new Date(i.data[0].date_created)
+                      .toISOString()
+                      .slice(0, 10) >= startDate &&
+                    new Date(i.data[0].date_created)
+                      .toISOString()
+                      .slice(0, 10) <= endDate,
+                )
+            ).map((item) => (
+              <Fragment key={item.href}>
+                <Item
+                  onClick={() =>
+                    dispatch({
+                      type: ActionTypes.SELECT_ITEM,
+                      payload: item,
+                    })
+                  }
+                  item={item}
+                />
+              </Fragment>
+            ))}
+          </div>
         </div>
       )}
     </div>
