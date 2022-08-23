@@ -30,12 +30,14 @@ function ItemList() {
               <input
                 type="date"
                 value={startDate}
+                placeholder="dd-mm-yyyy"
                 onChange={(e) => setStartDate(e.target.value)}
               />
               Year End :{" "}
               <input
                 type="date"
                 value={endDate}
+                placeholder="dd-mm-yyyy"
                 onChange={(e) => setEndDate(e.target.value)}
               />
             </div>

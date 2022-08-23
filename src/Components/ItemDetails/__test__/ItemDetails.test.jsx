@@ -5,12 +5,12 @@ import ItemDetails from "../ItemDetails";
 import ApplicationContextProvider from "../../../Context/ApplicationContextProvider";
 
 
-test("matches snapshot", () => {
+test("matches snapshot",  () => {
     const { container } = render(
         <ApplicationContextProvider> 
-    <ItemDetails {...mockData} />
+    <ItemDetails  />
     </ApplicationContextProvider>
     
     );
-    expect(container.firstChild).toMatchSnapshot();
+      expect(container.firstChild).toMatchSnapshot();
   });
