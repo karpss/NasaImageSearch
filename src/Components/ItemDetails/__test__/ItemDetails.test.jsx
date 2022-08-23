@@ -8,7 +8,7 @@ import ApplicationContextProvider from "../../../Context/ApplicationContextProvi
 test("matches snapshot",  () => {
     const { container } = render(
         <ApplicationContextProvider> 
-    <ItemDetails  />
+    <ItemDetails {...mockData} />
     </ApplicationContextProvider>
     
     );
