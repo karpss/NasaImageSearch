@@ -33,6 +33,15 @@ describe("Search", () => {
         fireEvent.change(inputElement, { target: { value: "Mars" } })
         expect(inputElement.value).toBe("Mars");
     });
+
+    it("should enable login button when search input is filled with value", () => {
+    render(<Search  />);
+      
+        const searchValue = screen.getByPlaceholderText("Enter Search like... Mars, Apollo");
+        fireEvent.change(searchValue, { target: { value: "mars" } });
+        expect(searchValue).toHaveValue("mars");
+        expect(screen.getByRole("button", { name: /Search/i })).toBeEnabled();
+      });
     
 
 
