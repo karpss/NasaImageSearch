@@ -29,13 +29,16 @@ function Search() {
 
   return (
     <form onSubmit={handleFetch}>
-      <input
-        className="formInput"
-        value={query}
-        placeholder="Enter Search like... Mars, Apollo"
-        label="Search images"
-        onChange={onQueryChange}
-      />
+      <label htmlFor="Search Images">
+        Search Images
+        <input
+          className="formInput"
+          value={query}
+          placeholder="Enter Search like... Mars, Apollo"
+          label="Search images"
+          onChange={onQueryChange}
+        />
+      </label>
       <button className="formButton" disabled={!query} type="submit">
         Search
       </button>

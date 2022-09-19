@@ -26,20 +26,24 @@ function ItemList() {
         <div>
           {items.length > 0 ? (
             <div>
-              Year Start :{" "}
-              <input
-                type="date"
-                value={startDate}
-                placeholder="dd-mm-yyyy"
-                onChange={(e) => setStartDate(e.target.value)}
-              />
-              Year End :{" "}
-              <input
-                type="date"
-                value={endDate}
-                placeholder="dd-mm-yyyy"
-                onChange={(e) => setEndDate(e.target.value)}
-              />
+              <label htmlFor="Year Start">
+                Year Start :{" "}
+                <input
+                  type="date"
+                  value={startDate}
+                  placeholder="dd-mm-yyyy"
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+              </label>
+              <label htmlFor="Year End">
+                Year End :{" "}
+                <input
+                  type="date"
+                  value={endDate}
+                  placeholder="dd-mm-yyyy"
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </label>
             </div>
           ) : (
             <div className="searchMessage">
